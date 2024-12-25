@@ -54,6 +54,12 @@ test('test if 40 print XL', () => {
 
 })
 
+test('test if 41 print XLI', () => {
+    const romanNumeral = new RomanNumeral()
+    expect(romanNumeral.of(41)).toBe('XLI')
+
+})
+
 test('test if 50 print L', () => {
     const romanNumeral = new RomanNumeral()
     expect(romanNumeral.of(50)).toBe('L')

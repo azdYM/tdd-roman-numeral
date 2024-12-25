@@ -65,7 +65,7 @@ export class RomanNumeral {
             return this.fiftyToRomanNumeral()
 
         if (number < 50)
-            return this.tenToRomanNumeral() + this.fiftyToRomanNumeral() + this.toRomanForRangeToThirtyNine(40 - number)
+            return this.tenToRomanNumeral() + this.fiftyToRomanNumeral() + this.toRomanForRangeToThirtyNine(number - 40)
     }
 
     private toRomanForRangeToThirtyNine(number: number) {
