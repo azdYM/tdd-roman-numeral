@@ -1,24 +1,21 @@
+const romanMap = [
+    [10, 'X'],
+    [9, 'IX'],
+    [5, 'V'],
+    [4, 'IV'],
+    [1, 'I'],
+]
+
 export class RomanNumeral {
     of(decimal: number) {
-        if (decimal === 1)
-            return 'I'
+        let result = ''
+        for(const [value, roman] of romanMap) {
+            while(decimal >= Number(value)) {
+                result += roman
+                decimal -= Number(value)
+            }
+        }
 
-        if (decimal === 2)
-            return 'II'
-
-        if (decimal === 4)
-            return 'IV'
-
-        if (decimal === 5)
-            return 'V'
-
-        if (decimal === 6)
-            return 'VI'
-
-        if (decimal === 9)
-            return 'IX'
-
-        if (decimal === 10)
-            return 'X'
+        return result
     }
 }
