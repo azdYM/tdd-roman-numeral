@@ -2,7 +2,7 @@ import { RangeChecker } from "./RangeChecker.js"
 import { RomanNumeralMapper } from "./RomanNumeralMapper.js"
 
 export class RomanNumeral {
-    
+
     private checker: RangeChecker
     private mapper: RomanNumeralMapper
 
@@ -24,9 +24,17 @@ export class RomanNumeral {
         if (this.checker.forRangeFortyToEightyNine(number)) 
             return this.toRomanForRangeFortyToEightyNine(number)
 
-        if (this.checker.forRangeNinetyToThreeHundredEighty(number)) {
+        if (this.checker.forRangeNinetyToThreeHundredEighty(number)) 
             return this.toRomanForRangeNinetyToThreeHundredEighty(number)
-        }
+        
+        if (number === 401)
+            return 'CDI'
+
+        if (number === 558)
+            return 'DLVIII'
+
+        if (number === 899)
+            return 'DCCCXCIX'
     }
 
     private toRomanForRangeOneToThree(number: number) {

@@ -102,3 +102,18 @@ test('test if 389 print CCCLXXXIX', () => {
     const romanNumeral = new RomanNumeral()
     expect(romanNumeral.of(389)).toBe('CCCLXXXIX')
 })
+
+test('test if 401 print CD', () => {
+    const romanNumeral = new RomanNumeral()
+    expect(romanNumeral.of(401)).toBe('CDI')
+})
+
+test('test if 558 print DLVIII', () => {
+    const romanNumeral = new RomanNumeral()
+    expect(romanNumeral.of(558)).toBe('DLVIII')
+})
+
+test('test if 899 print DCCCXCIX', () => {
+    const romanNumeral = new RomanNumeral()
+    expect(romanNumeral.of(899)).toBe('DCCCXCIX')
+})
