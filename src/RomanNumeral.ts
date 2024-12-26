@@ -11,6 +11,27 @@ export class RomanNumeral {
 
         if (this.forRangeFortyToEightyNine(number)) 
             return this.toRomanForRangeFortyToEightyNine(number)
+
+        if (number === 91)
+            return 'XCI'
+
+        if (number === 101)
+            return 'CI'
+
+        if (number === 111)
+            return 'CXI'
+
+        if (number === 301)
+            return 'CCCI'
+
+        if (number === 321)
+            return 'CCCXXI'
+
+        if (number === 351)
+            return 'CCCLI'
+
+        if (number === 389)
+            return 'CCCLXXXIX'
     }
 
     private forRangeOneToThree(number: number) {

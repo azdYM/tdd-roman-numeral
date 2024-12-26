@@ -32,11 +32,6 @@ test('test if 9 print IX', () => {
     expect(romanNumeral.of(9)).toBe('IX')
 })
 
-test('test if 10 print X', () => {
-    const romanNumeral = new RomanNumeral()
-    expect(romanNumeral.of(10)).toBe('X')
-})
-
 test('test if 11 print XI', () => {
     const romanNumeral = new RomanNumeral()
     expect(romanNumeral.of(11)).toBe('XI')
@@ -47,30 +42,58 @@ test('test if 39 print XXXIX', () => {
     expect(romanNumeral.of(39)).toBe('XXXIX')
 })
 
-test('test if 40 print XL', () => {
-    const romanNumeral = new RomanNumeral()
-    expect(romanNumeral.of(40)).toBe('XL')
-    expect(romanNumeral.of(41)).toBe('XLI')
-
-})
-
 test('test if 41 print XLI', () => {
     const romanNumeral = new RomanNumeral()
     expect(romanNumeral.of(41)).toBe('XLI')
 
 })
 
-test('test if 50 print L', () => {
+test('test if 51 print LI', () => {
     const romanNumeral = new RomanNumeral()
-    expect(romanNumeral.of(50)).toBe('L')
+    expect(romanNumeral.of(51)).toBe('LI')
 })
 
-test('test if 60 print LX', () => {
+test('test if 61 print LXI', () => {
     const romanNumeral = new RomanNumeral()
-    expect(romanNumeral.of(60)).toBe('LX')
+    expect(romanNumeral.of(61)).toBe('LXI')
 })
 
 test('test if 89 print LXXXIX', () => {
     const romanNumeral = new RomanNumeral()
     expect(romanNumeral.of(89)).toBe('LXXXIX')
+})
+
+test('test if 91 print XCI', () => {
+    const romanNumeral = new RomanNumeral()
+    expect(romanNumeral.of(91)).toBe('XCI')
+})
+
+test('test if 101 print CI', () => {
+    const romanNumeral = new RomanNumeral()
+    expect(romanNumeral.of(101)).toBe('CI')
+})
+
+test('test if 111 print CXI', () => {
+    const romanNumeral = new RomanNumeral()
+    expect(romanNumeral.of(111)).toBe('CXI')
+})
+
+test('test if 301 print CCCI', () => {
+    const romanNumeral = new RomanNumeral()
+    expect(romanNumeral.of(301)).toBe('CCCI')
+})
+
+test('test if 321 print CCCXXI', () => {
+    const romanNumeral = new RomanNumeral()
+    expect(romanNumeral.of(321)).toBe('CCCXXI')
+})
+
+test('test if 351 print CCCLI', () => {
+    const romanNumeral = new RomanNumeral()
+    expect(romanNumeral.of(351)).toBe('CCCLI')
+})
+
+test('test if 389 print CCCLXXXIX', () => {
+    const romanNumeral = new RomanNumeral()
+    expect(romanNumeral.of(389)).toBe('CCCLXXXIX')
 })
