@@ -78,6 +78,11 @@ test('test if 111 print CXI', () => {
     expect(romanNumeral.of(111)).toBe('CXI')
 })
 
+test('test if 151 print CLI', () => {
+    const romanNumeral = new RomanNumeral()
+    expect(romanNumeral.of(151)).toBe('CLI')
+})
+
 test('test if 301 print CCCI', () => {
     const romanNumeral = new RomanNumeral()
     expect(romanNumeral.of(301)).toBe('CCCI')
