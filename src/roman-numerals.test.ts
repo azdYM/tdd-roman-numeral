@@ -117,3 +117,22 @@ test('test if 899 print DCCCXCIX', () => {
     const romanNumeral = new RomanNumeral()
     expect(romanNumeral.of(899)).toBe('DCCCXCIX')
 })
+
+test('test if 907 print CMVII', () => {
+    const romanNumeral = new RomanNumeral()
+    expect(romanNumeral.of(907)).toBe('CMVII')
+})
+test('test if 1001 print MI', () => {
+    const romanNumeral = new RomanNumeral()
+    expect(romanNumeral.of(1001)).toBe('MI')
+})
+
+test('test if 1059 print MLIX', () => {
+    const romanNumeral = new RomanNumeral()
+    expect(romanNumeral.of(1059)).toBe('MLIX')
+})
+
+test('test if 4316 print MMMMCCCXVI', () => {
+    const romanNumeral = new RomanNumeral()
+    expect(romanNumeral.of(4316)).toBe('MMMMCCCXVI')
+})
