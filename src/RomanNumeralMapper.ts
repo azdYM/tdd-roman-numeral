@@ -18,4 +18,8 @@ export class RomanNumeralMapper {
     public oneHundredToRomanNumeral() {
         return 'C'
     }
+
+    public fiveHundredToRomanNumeral() {
+        return 'D'
+    }
 }

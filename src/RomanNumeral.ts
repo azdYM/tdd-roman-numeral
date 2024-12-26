@@ -12,32 +12,39 @@ export class RomanNumeral {
     }
 
     of(number: number) {
-        if (this.checker.forRangeOneToThree(number)) 
-            return this.toRomanForRangeOneToThree(number)
-        
-        if (this.checker.forRangeFourToEight(number)) 
-            return this.toRomanForRangeFourToEight(number)
-        
-        if (this.checker.forRangeNineToThirtyNine(number)) 
-            return this.toRomanForRangeNineToThirtyNine(number)
-
-        if (this.checker.forRangeFortyToEightyNine(number)) 
-            return this.toRomanForRangeFortyToEightyNine(number)
-
-        if (this.checker.forRangeNinetyToThreeHundredEighty(number)) 
-            return this.toRomanForRangeNinetyToThreeHundredEighty(number)
-        
-        if (number === 401)
-            return 'CDI'
-
-        if (number === 558)
-            return 'DLVIII'
-
-        if (number === 899)
-            return 'DCCCXCIX'
+        return this.mapNumberToRomanNumeral(number)
     }
 
-    private toRomanForRangeOneToThree(number: number) {
+    private mapNumberToRomanNumeral(number: number) {
+        if (this.checker.forRangeOneToThirtyNine(number)) 
+            return this.oneToThirtyNineForRomanNumeral(number)
+
+        if (this.checker.forRangeFortyToEightyNine(number)) 
+            return this.fortyToEightyNineForRomanNumeral(number)
+
+        if (this.checker.forRangeNinetyToThreeHundredEighty(number))
+            return this.ninetyToThreeHundredEightyForRomanNumeral(number)
+
+        if (this.checker.forRangeFourHundredToEightHundredninetyNine(number)) 
+            return this.fourHundredToEightHundredNinetyNineForRomanNumeral(number)
+        
+        return ''
+    } 
+
+    private oneToThirtyNineForRomanNumeral(number: number) {
+        if (this.checker.forRangeOneToThree(number)) 
+            return this.oneToThreeForRomanNumeral(number)
+
+        if (this.checker.forRangeFourToEight(number))
+            return this.fourToEightForRomanNumeral(number)
+        
+        if (this.checker.forRangeNineToThirtyNine(number)) 
+            return this.nineToThirtyNineForRomanNumeral(number)
+
+        return ''
+    }
+
+    private oneToThreeForRomanNumeral(number: number) {
         let romanNumeral = ""
         for(let i = 1; i <= number; i++) {
             romanNumeral += this.mapper.oneToRomanNumeral()
@@ -46,70 +53,53 @@ export class RomanNumeral {
         return romanNumeral
     }
 
-    private toRomanForRangeFourToEight(number: number) {
+    private fourToEightForRomanNumeral(number: number) {
         if (number === 5 )
             return this.mapper.fiveToRomanNumeral()
 
         if (number < 5)
             return this.mapper.oneToRomanNumeral() + this.mapper.fiveToRomanNumeral()
 
-        return this.mapper.fiveToRomanNumeral() + this.toRomanForRangeOneToThree(number - 5)
+        return this.mapper.fiveToRomanNumeral() + this.oneToThreeForRomanNumeral(number - 5)
     }
 
-    private toRomanForRangeNineToThirtyNine(number: number) {
+    private nineToThirtyNineForRomanNumeral(number: number) {
         if (number === 10) 
             return this.mapper.tenToRomanNumeral()
         
         if (number < 10)
             return this.mapper.oneToRomanNumeral() + this.mapper.tenToRomanNumeral()
 
-        return this.mapper.tenToRomanNumeral() + this.toRomanForRangeToThirtyNine(number - 10)
+        return this.mapper.tenToRomanNumeral() + this.oneToThirtyNineForRomanNumeral(number - 10)
     }
 
-    private toRomanForRangeFortyToEightyNine(number: number) {
+    private fortyToEightyNineForRomanNumeral(number: number) {
         if (number === 50)
             return this.mapper.fiftyToRomanNumeral()
 
         if (number < 50)
-            return this.mapper.tenToRomanNumeral() + this.mapper.fiftyToRomanNumeral() + this.toRomanForRangeToThirtyNine(number - 40)
+            return this.mapper.tenToRomanNumeral() + this.mapper.fiftyToRomanNumeral() + this.oneToThirtyNineForRomanNumeral(number - 40)
         
-        return this.mapper.fiftyToRomanNumeral() + this.toRomanForRangeToThirtyNine(number - 50)
+        return this.mapper.fiftyToRomanNumeral() + this.oneToThirtyNineForRomanNumeral(number - 50)
     }
 
-    private toRomanForRangeNinetyToThreeHundredEighty(number: number) {
+    private ninetyToThreeHundredEightyForRomanNumeral(number: number) {
         if (number === 100)
             return this.mapper.oneHundredToRomanNumeral()
 
         if (number < 100) 
-            return this.mapper.tenToRomanNumeral() + this.mapper.oneHundredToRomanNumeral() + this.toRomanForRangeToThirtyNine(number - 90)
+            return this.mapper.tenToRomanNumeral() + this.mapper.oneHundredToRomanNumeral() + this.mapNumberToRomanNumeral(number - 90)
         
-        if (number > 100)
-            return this.mapper.oneHundredToRomanNumeral() + this.toRomanForRangeToThreeHundredEightyNine(number - 100)
+        return this.mapper.oneHundredToRomanNumeral() + this.mapNumberToRomanNumeral(number - 100)
     }
 
-    private toRomanForRangeToThirtyNine(number: number) {
-        if (this.checker.forRangeOneToThree(number)) 
-            return this.toRomanForRangeOneToThree(number)
+    private fourHundredToEightHundredNinetyNineForRomanNumeral(number: number) {
+        if (number === 500)
+            return this.mapper.fiveHundredToRomanNumeral()
 
-        if (this.checker.forRangeFourToEight(number))
-            return this.toRomanForRangeFourToEight(number)
-        
-        if (this.checker.forRangeNineToThirtyNine(number)) 
-            return this.toRomanForRangeNineToThirtyNine(number)
+        if (number < 500) 
+            return this.mapper.oneHundredToRomanNumeral() + this.mapper.fiveHundredToRomanNumeral() + this.mapNumberToRomanNumeral(number - 400)
 
-        return ''
+        return this.mapper.fiveHundredToRomanNumeral() + this.mapNumberToRomanNumeral(number - 500)
     }
-
-    private toRomanForRangeToThreeHundredEightyNine(number: number) {
-        if (this.checker.forRangeOneToThirtyNine(number)) 
-            return this.toRomanForRangeToThirtyNine(number)
-
-        if (this.checker.forRangeFortyToEightyNine(number)) 
-            return this.toRomanForRangeFortyToEightyNine(number)
-
-        if (this.checker.forRangeNinetyToThreeHundredEighty(number))
-            return this.toRomanForRangeNinetyToThreeHundredEighty(number)
-
-        return ''
-    } 
 }

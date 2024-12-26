@@ -26,4 +26,8 @@ export class RangeChecker {
     public forRangeNinetyToThreeHundredEighty(number: number) {
         return number >= 90 && number <= 399
     }
+
+    public forRangeFourHundredToEightHundredninetyNine(number: number) {
+        return number >= 400 && number <= 899
+    }
 }
