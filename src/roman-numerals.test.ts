@@ -69,3 +69,8 @@ test('test if 60 print LX', () => {
     const romanNumeral = new RomanNumeral()
     expect(romanNumeral.of(60)).toBe('LX')
 })
+
+test('test if 89 print LXXXIX', () => {
+    const romanNumeral = new RomanNumeral()
+    expect(romanNumeral.of(89)).toBe('LXXXIX')
+})

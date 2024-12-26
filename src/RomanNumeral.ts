@@ -1,4 +1,3 @@
-
 export class RomanNumeral {
     of(number: number) {
         if (this.forRangeOneToThree(number)) 
@@ -10,7 +9,7 @@ export class RomanNumeral {
         if (this.forRangeNineToThirtyNine(number)) 
             return this.toRomanForRangeNineToThirtyNine(number)
 
-        if (this.forRangeNineToFortyToEightyNine(number)) 
+        if (this.forRangeFortyToEightyNine(number)) 
             return this.toRomanForRangeFortyToEightyNine(number)
     }
 
@@ -22,7 +21,7 @@ export class RomanNumeral {
         return [4, 5, 6, 7, 8].includes(number)
     } 
 
-    private forRangeNineToFortyToEightyNine(number: number) {
+    private forRangeFortyToEightyNine(number: number) {
         return number >= 40 && number <= 89
     }
 
@@ -66,6 +65,8 @@ export class RomanNumeral {
 
         if (number < 50)
             return this.tenToRomanNumeral() + this.fiftyToRomanNumeral() + this.toRomanForRangeToThirtyNine(number - 40)
+        
+        return this.fiftyToRomanNumeral() + this.toRomanForRangeToThirtyNine(number - 50)
     }
 
     private toRomanForRangeToThirtyNine(number: number) {
